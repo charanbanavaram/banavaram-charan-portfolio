@@ -3,35 +3,34 @@
    Principal UI/UX & Design Systems Architecture
    ========================================================================== */
 
-/* 1. TOKENS & CSS VARIABLES (Strict Warm Editorial Palette) */
+/* 1. TOKENS & CSS VARIABLES (Strict Premium Warm Monochrome Palette) */
 :root {
-  /* Core Warm Color Palette */
-  --color-bg: #F6F1E7;            /* Warm Ivory — Main Background */
-  --color-surface: #FFFDF8;       /* Soft White — Elevated Surface */
-  --color-surface-soft: #EAE2D4;  /* Warm Sand — Secondary Surface & Tags */
+  /* Core Warm Monochrome Color Palette */
+  --color-bg: #F7F6F2;            /* Warm Off-White — Main Background */
+  --color-surface: #FFFDF8;       /* Warm White — Elevated Surface */
+  --color-surface-soft: #EAE8E1;  /* Light Warm Surface — Secondary Surface & Tags */
   
-  --color-primary: #173F35;       /* Deep Warm Forest — Primary Brand & Headings */
-  --color-primary-soft: #315B4E;  /* Warm Forest Soft */
-  --color-primary-hover: #102C25; /* Deeper Forest for hover */
+  --color-primary: #171717;       /* Near-Black — Primary Brand & Headings */
+  --color-primary-soft: #242424;  /* Secondary Black */
+  --color-primary-hover: #000000; /* Pure Black for crisp hover */
   
-  --color-text: #24231F;          /* Warm Charcoal — Primary Body Text */
-  --color-text-muted: #706A5F;    /* Warm Taupe — Secondary Text & Metadata */
+  --color-text: #242424;          /* Secondary Black — Primary Body Text */
+  --color-text-muted: #726F68;    /* Warm Muted Gray — Secondary Text & Metadata (4.64:1+ WCAG AA) */
   
-  --color-accent: #B85C45;        /* Warm Terracotta — Signature Accent (2-4% usage) */
-  --color-accent-text: #9E4A35;   /* Deeper Terracotta for 5.35:1+ WCAG AA text contrast */
-  --color-accent-soft: #D58A73;   /* Soft Terracotta */
-  --color-accent-subtle: #F6EAE6; /* Very light terracotta tint */
+  --color-accent: #A95743;        /* Muted Terracotta — Signature Micro-Accent (1-3% usage) */
+  --color-accent-text: #8E3B2A;   /* Tuned Terracotta for 6.9:1+ WCAG AA text contrast */
+  --color-accent-soft: #C27461;   /* Soft Terracotta */
+  --color-accent-subtle: #F7EBE8; /* Very light terracotta tint */
   
-  --color-sage: #819487;          /* Warm Sage — Secondary Accent (1-3% usage) */
-  --color-sage-soft: #EDF1EE;     /* Sage soft tint */
+  --color-gray-soft: #B5B1A8;     /* Soft Warm Gray — Secondary metadata & borders */
   
-  --color-border: #D8D0C2;        /* Warm Border — Dividers, inputs, hairline borders */
-  --color-border-strong: #BFB6A4; /* Stronger Warm Border */
+  --color-border: #D9D7D0;        /* Warm Border — Dividers, inputs, hairline borders */
+  --color-border-strong: #B5B1A8; /* Stronger Warm Border */
   
-  --color-success: #3D614A;       /* Semantic Success (6.2:1 contrast on ivory) */
-  --color-success-bg: #EBF2ED;    /* Success Background */
-  --color-error: #8E3B30;         /* Semantic Error (6.6:1 contrast on ivory) */
-  --color-error-bg: #F9ECEB;      /* Error Background */
+  --color-success: #3D614A;       /* Semantic Success (6.6:1 contrast on off-white) */
+  --color-success-bg: #EAEFEA;    /* Success Background */
+  --color-error: #9E3F36;         /* Semantic Error (5.8:1 contrast on off-white) */
+  --color-error-bg: #F8EBEA;      /* Error Background */
   --color-warning: #85531B;       /* Warm Amber Warning */
   --color-warning-bg: #F9F1E6;    /* Warning Background */
 
@@ -62,9 +61,9 @@
   --radius-pill: 9999px;
 
   /* Subtle Warm Shadows */
-  --shadow-sm: 0 2px 4px rgba(36, 35, 31, 0.04);
-  --shadow-md: 0 8px 24px rgba(23, 63, 53, 0.06);
-  --shadow-lg: 0 20px 48px rgba(23, 63, 53, 0.12);
+  --shadow-sm: 0 2px 4px rgba(23, 23, 23, 0.04);
+  --shadow-md: 0 8px 24px rgba(23, 23, 23, 0.06);
+  --shadow-lg: 0 20px 48px rgba(23, 23, 23, 0.12);
 
   --max-width: 1220px;
   --section-pad: 96px;
@@ -324,15 +323,15 @@ img, svg {
 }
 
 .badge-enterprise {
-  background: var(--color-sage-soft);
+  background: var(--color-surface-soft);
   color: var(--color-primary);
-  border: 1px solid #BAC9C0;
+  border: 1px solid var(--color-border);
 }
 
 .badge-primary {
   background: var(--color-accent-subtle);
   color: var(--color-accent-text);
-  border: 1px solid #F0C0B0;
+  border: 1px solid rgba(169, 87, 67, 0.25);
 }
 
 .badge-outline {
@@ -365,13 +364,13 @@ img, svg {
 .status-dev {
   background: var(--color-warning-bg);
   color: var(--color-warning);
-  border: 1px solid #EEDBC5;
+  border: 1px solid #E5D9C8;
 }
 
 .status-done {
   background: var(--color-success-bg);
   color: var(--color-success);
-  border: 1px solid #C8DDD0;
+  border: 1px solid #C2D5C8;
 }
 
 /* 5. FIRST-VISIT WELCOME OVERLAY (Signature 0.85s Greeting) */
@@ -482,7 +481,7 @@ img, svg {
 .site-header {
   position: sticky;
   top: 0;
-  background-color: rgba(246, 241, 231, 0.94);
+  background-color: rgba(247, 246, 242, 0.94);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
@@ -748,7 +747,7 @@ img, svg {
 }
 
 .pillar-row:hover {
-  background-color: rgba(234, 226, 212, 0.25);
+  background-color: rgba(234, 232, 225, 0.4);
 }
 
 .pillar-lead-col {
@@ -1247,11 +1246,11 @@ img, svg {
 }
 
 .shortlist-box .sidebar-heading {
-  color: #A9C5BA;
+  color: var(--color-gray-soft);
 }
 
 .shortlist-box .sidebar-text {
-  color: #DDE8E2;
+  color: var(--color-surface-soft);
   margin-bottom: 18px;
 }
 
@@ -1361,14 +1360,14 @@ img, svg {
 }
 
 .callout-badges .badge-primary {
-  background: rgba(184, 92, 69, 0.25);
-  color: #F0B2A3;
-  border: 1px solid rgba(184, 92, 69, 0.45);
+  background: rgba(169, 87, 67, 0.25);
+  color: #F7D2C9;
+  border: 1px solid rgba(169, 87, 67, 0.45);
 }
 
 .callout-badges .badge-outline {
   background: rgba(255, 253, 248, 0.08);
-  color: #DDE8E2;
+  color: var(--color-surface-soft);
   border: 1px solid rgba(255, 253, 248, 0.2);
 }
 
@@ -1383,7 +1382,7 @@ img, svg {
 
 .callout-desc {
   font-size: 16px;
-  color: #DDE8E2;
+  color: var(--color-surface-soft);
   max-width: 68ch;
   line-height: 1.6;
   margin-bottom: 32px;
@@ -1394,8 +1393,8 @@ img, svg {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 24px 0;
-  border-top: 1px solid rgba(216, 208, 194, 0.2);
-  border-bottom: 1px solid rgba(216, 208, 194, 0.2);
+  border-top: 1px solid rgba(217, 215, 208, 0.2);
+  border-bottom: 1px solid rgba(217, 215, 208, 0.2);
   margin-bottom: 32px;
 }
 
@@ -1409,7 +1408,7 @@ img, svg {
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: #A9C5BA;
+  color: var(--color-gray-soft);
   margin-bottom: 4px;
 }
 
@@ -1422,7 +1421,7 @@ img, svg {
 
 .strip-stat small {
   font-size: 12px;
-  color: #DDE8E2;
+  color: var(--color-surface-soft);
   margin-top: 2px;
 }
 
@@ -1645,17 +1644,17 @@ img, svg {
   display: block;
   background: var(--color-success-bg);
   color: var(--color-success);
-  border: 1px solid #C8DDD0;
+  border: 1px solid #C2D5C8;
 }
 
 .form-feedback.error {
   display: block;
   background: var(--color-error-bg);
   color: var(--color-error);
-  border: 1px solid #EAC8C5;
+  border: 1px solid #E4C1BE;
 }
 
-/* 14. FOOTER (DEEP WARM FOREST) */
+/* 14. FOOTER (NEAR-BLACK WARM MONOCHROME) */
 .site-footer {
   background: var(--color-primary);
   color: var(--color-bg);
@@ -1700,7 +1699,7 @@ img, svg {
   display: block;
   font-family: var(--mono);
   font-size: 11px;
-  color: #A9C5BA;
+  color: var(--color-gray-soft);
 }
 
 .back-to-top {
@@ -1718,7 +1717,7 @@ img, svg {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(23, 63, 53, 0.75);
+  background: rgba(23, 23, 23, 0.75);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 1500;
@@ -1957,7 +1956,7 @@ img, svg {
 
 .architecture-diagram {
   background: var(--color-primary);
-  color: #DDE8E2;
+  color: var(--color-surface-soft);
   font-family: var(--mono);
   font-size: 12px;
   line-height: 1.5;
