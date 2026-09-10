@@ -1,0 +1,35 @@
+# Banavaram Charan — Professional Portfolio
+> Business Analyst · Data Analyst · Software Developer
+
+## Summary
+Banavaram Charan combines business operations, data analysis, and software engineering to build practical, secure, and scalable technology solutions. Experienced in banking operations, financial liabilities, payment reconciliation, Maker-Checker risk controls, and full-stack web application development.
+
+## Current Experience
+- Apprentice – Financial Liabilities Operations (WRB), Standard Chartered Bank GBS, Bengaluru, India (October 2025 – Present)
+- Core Focus: High-volume financial transactions, 7-gateway payment settlement (Razorpay, Paytm, PayU, CCAvenue, TPSL, BillDesk, Atom), discrepancy investigation, Maker-Checker authorization, deposit servicing, Excel MIS reporting, and process digitization.
+
+## Education
+- B.Tech in Computer Science & Engineering, Christ (Deemed to be University), Bengaluru (2021 – 2025), CGPA: 8.23 / 10
+- Class XII, Sri Chaitanya Junior College (2019 – 2021), CGPA: 8.2 / 10
+- Class X, Sri Swamy Vivekananda EM High School (2015 – 2019), GPA: 9.3 / 10
+
+## Verified Projects
+1. Smart Print: Secure print management platform with QR-code and secure PIN authentication, RBAC, REST APIs, and database architecture (React.js, Node.js, MySQL/PostgreSQL).
+2. Block Management Process Digitization: Business analysis and future-state workflow model for financial block actions with Maker-Checker controls, RBAC, and SLA monitoring.
+3. Payment Settlement & Reconciliation Process Analysis: Operational framework mapping payment flows across 7 gateways, discrepancy classification, and automated refund checkpoints.
+4. Banking Operations Performance Dashboard: Operational intelligence pipeline using SQL transformations and interactive Power BI KPI dashboards for volume and SLA tracking.
+
+## Technical Skills
+- Programming: Python (PCAP Certified), Java, JavaScript, SQL, C (NPTEL)
+- Data & Analytics: SQL, Power BI, Microsoft Excel (Formulas, Pivot, MIS), Reconciliation
+- Full-Stack & APIs: React.js, Node.js, REST APIs, HTML5, CSS3, Git, GitHub
+- Databases: MySQL, PostgreSQL, MongoDB
+- DevSecOps & Governance: RBAC, Maker-Checker, QR Authentication, Audit Logging, SLA Monitoring
+
+## Contact & Links
+- [Website](https://banavaram-charan-portfoliocom.vercel.app/)
+- [Email](mailto:banavaramcharan@gmail.com)
+- [LinkedIn Profile](https://www.linkedin.com/in/banavaram-charan-733ab4222/)
+- [GitHub Profile](https://github.com/charanbanavaram)
+- [Verified Resume PDF](https://banavaram-charan-portfoliocom.vercel.app/Banavaram-Charan-Resume.pdf)
+
