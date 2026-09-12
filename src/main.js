@@ -315,57 +315,110 @@ app.innerHTML = `
 </header>
 
 <main id="main-content">
-  <!-- 03. HERO SECTION (FOCUSED, AUTHORITATIVE, ZERO CLUTTER) -->
+  <!-- 03. HERO SECTION (SPLIT COMPOSITION WITH DEVSECOPS TELEMETRY) -->
   <section class="hero-section" id="top">
     <div class="container hero-container">
-      <div class="hero-main">
-        <div class="hero-badge">
-          <span class="status-indicator" aria-hidden="true"></span>
-          <span>Apprentice – Financial Liabilities Operations · <strong>Standard Chartered Bank GBS</strong></span>
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="hero-badge">
+            <span class="status-indicator" aria-hidden="true"></span>
+            <span>Apprentice – Financial Liabilities Operations · <strong>Standard Chartered Bank GBS</strong></span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-name">BANAVARAM CHARAN</span>
+            <span class="hero-roles">Business Analyst · Data Analyst · Software Developer</span>
+          </h1>
+
+          <p class="hero-lede">
+            I combine business operations understanding, analytical data modeling, and software engineering to build practical, secure, and verifiable technology solutions.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary btn-lg">
+              <span>Explore Selected Work</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </a>
+            <a href="${LINKS.resume}" download="Banavaram-Charan-Resume.pdf" class="btn btn-secondary btn-lg">
+              <span>Download Resume</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost btn-lg">
+              <span>Get in Touch</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Recruiter Fast-Scan Anchor Bar -->
+          <div class="hero-proof-bar">
+            <div class="proof-item">
+              <span class="proof-label">ENTERPRISE EXECUTION</span>
+              <span class="proof-val">Standard Chartered Bank GBS</span>
+              <span class="proof-sub">Financial Liabilities Operations · WRB</span>
+            </div>
+            <div class="proof-divider" aria-hidden="true"></div>
+            <div class="proof-item">
+              <span class="proof-label">ACADEMIC FOUNDATION</span>
+              <span class="proof-val">B.Tech, Computer Science</span>
+              <span class="proof-sub">Christ University · CGPA 8.23 / 10</span>
+            </div>
+            <div class="proof-divider" aria-hidden="true"></div>
+            <div class="proof-item">
+              <span class="proof-label">CORE DIFFERENTIATOR</span>
+              <span class="proof-val">Operations + Data + Engineering</span>
+              <span class="proof-sub">Bridging compliance, SQL, and full-stack code</span>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-title">
-          <span class="hero-name">BANAVARAM CHARAN</span>
-          <span class="hero-roles">Business Analyst · Data Analyst · Software Developer</span>
-        </h1>
+        <!-- Right Side: Abstract DevSecOps Engineering Visual -->
+        <div class="hero-visual-wrap" aria-hidden="true">
+          <div class="hero-radar-card">
+            <div class="radar-card-header">
+              <div class="radar-title-group">
+                <span class="radar-status-dot"></span>
+                <span class="radar-title">SYSTEM TELEMETRY // SEC_CORE_v2.4</span>
+              </div>
+              <span class="radar-badge">LIVE MONITOR</span>
+            </div>
 
-        <p class="hero-lede">
-          I combine business operations understanding, analytical data modeling, and software engineering to build practical, secure, and verifiable technology solutions.
-        </p>
+            <div class="radar-display">
+              <div class="radar-circle circle-outer"></div>
+              <div class="radar-circle circle-mid"></div>
+              <div class="radar-circle circle-inner"></div>
+              <div class="radar-sweep"></div>
+              <div class="radar-grid-line line-h"></div>
+              <div class="radar-grid-line line-v"></div>
+              
+              <div class="radar-core-hub">
+                <span class="hub-code">OPS·ENG</span>
+                <span class="hub-label">NEXUS</span>
+              </div>
 
-        <div class="hero-ctas">
-          <a href="#projects" class="btn btn-primary btn-lg">
-            <span>Explore Selected Work</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
-          </a>
-          <a href="${LINKS.resume}" download="Banavaram-Charan-Resume.pdf" class="btn btn-secondary btn-lg">
-            <span>Download Resume</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </a>
-          <a href="#contact" class="btn btn-ghost btn-lg">
-            <span>Get in Touch</span>
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
+              <!-- Satellite Telemetry Nodes -->
+              <div class="radar-node node-1" title="7-Gateway Settlement">
+                <span class="node-ping"></span>
+                <span class="node-tag">RECON // 7-GW</span>
+              </div>
+              <div class="radar-node node-2" title="Maker-Checker Dual Control">
+                <span class="node-ping"></span>
+                <span class="node-tag">MAKER-CHECKER</span>
+              </div>
+              <div class="radar-node node-3" title="Dynamic QR & RBAC">
+                <span class="node-ping"></span>
+                <span class="node-tag">RBAC // QR AUTH</span>
+              </div>
+              <div class="radar-node node-4" title="SQL Star Schema Analytics">
+                <span class="node-ping"></span>
+                <span class="node-tag">SQL // MIS TELEMETRY</span>
+              </div>
+            </div>
 
-        <!-- Recruiter Fast-Scan Anchor Bar -->
-        <div class="hero-proof-bar">
-          <div class="proof-item">
-            <span class="proof-label">ENTERPRISE EXECUTION</span>
-            <span class="proof-val">Standard Chartered Bank GBS</span>
-            <span class="proof-sub">Financial Liabilities Operations · WRB</span>
-          </div>
-          <div class="proof-divider" aria-hidden="true"></div>
-          <div class="proof-item">
-            <span class="proof-label">ACADEMIC FOUNDATION</span>
-            <span class="proof-val">B.Tech, Computer Science</span>
-            <span class="proof-sub">Christ University · CGPA 8.23 / 10</span>
-          </div>
-          <div class="proof-divider" aria-hidden="true"></div>
-          <div class="proof-item">
-            <span class="proof-label">CORE DIFFERENTIATOR</span>
-            <span class="proof-val">Operations + Data + Engineering</span>
-            <span class="proof-sub">Bridging compliance, SQL, and full-stack code</span>
+            <div class="radar-terminal-feed">
+              <div class="feed-row"><span class="feed-prompt">></span> <span class="feed-cmd">dual_control.governance</span>: <span class="feed-val status-ok">ENFORCED (100% SOP)</span></div>
+              <div class="feed-row"><span class="feed-prompt">></span> <span class="feed-cmd">gateway_recon.matrix</span>: <span class="feed-val status-ok">3-WAY VERIFIED (T+1/T+3)</span></div>
+              <div class="feed-row"><span class="feed-prompt">></span> <span class="feed-cmd">tat_latency_alert</span>: <span class="feed-val status-ok">NOMINAL (WITHIN SLA)</span></div>
+            </div>
           </div>
         </div>
       </div>
