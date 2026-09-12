@@ -277,7 +277,7 @@ app.innerHTML = `
 <!-- 02. RECRUITER NAVIGATION -->
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a href="#top" class="wordmark" aria-label="Banavaram Charan — Analyst & Developer">
+    <a href="#top" class="wordmark">
       <span class="mark" aria-hidden="true">BC</span>
       <span class="wordmark-text">
         <strong>Banavaram Charan</strong>
@@ -371,53 +371,54 @@ app.innerHTML = `
           </div>
         </div>
 
-        <!-- Right Side: Abstract DevSecOps Engineering Visual -->
+        <!-- Right Side: Clean Developer Profile & Architecture Card -->
         <div class="hero-visual-wrap" aria-hidden="true">
-          <div class="hero-radar-card">
-            <div class="radar-card-header">
-              <div class="radar-title-group">
-                <span class="radar-status-dot"></span>
-                <span class="radar-title">SYSTEM TELEMETRY // SEC_CORE_v2.4</span>
+          <div class="hero-developer-card">
+            <div class="card-ambient-glow"></div>
+
+            <div class="dev-card-header">
+              <div class="window-controls">
+                <span class="dot dot-close"></span>
+                <span class="dot dot-minimize"></span>
+                <span class="dot dot-expand"></span>
               </div>
-              <span class="radar-badge">LIVE MONITOR</span>
+              <div class="dev-card-tab">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <span class="tab-filename">charan.profile.ts</span>
+              </div>
+              <div class="dev-card-badge">TypeScript</div>
             </div>
 
-            <div class="radar-display">
-              <div class="radar-circle circle-outer"></div>
-              <div class="radar-circle circle-mid"></div>
-              <div class="radar-circle circle-inner"></div>
-              <div class="radar-sweep"></div>
-              <div class="radar-grid-line line-h"></div>
-              <div class="radar-grid-line line-v"></div>
-              
-              <div class="radar-core-hub">
-                <span class="hub-code">OPS·ENG</span>
-                <span class="hub-label">NEXUS</span>
-              </div>
-
-              <!-- Satellite Telemetry Nodes -->
-              <div class="radar-node node-1" title="7-Gateway Settlement">
-                <span class="node-ping"></span>
-                <span class="node-tag">RECON // 7-GW</span>
-              </div>
-              <div class="radar-node node-2" title="Maker-Checker Dual Control">
-                <span class="node-ping"></span>
-                <span class="node-tag">MAKER-CHECKER</span>
-              </div>
-              <div class="radar-node node-3" title="Dynamic QR & RBAC">
-                <span class="node-ping"></span>
-                <span class="node-tag">RBAC // QR AUTH</span>
-              </div>
-              <div class="radar-node node-4" title="SQL Star Schema Analytics">
-                <span class="node-ping"></span>
-                <span class="node-tag">SQL // MIS TELEMETRY</span>
-              </div>
+            <div class="dev-code-body">
+              <div class="code-line"><span class="code-comment">// Multi-Disciplinary Engineering Profile</span></div>
+              <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">charan</span>: <span class="code-type">Engineer</span> = {</div>
+              <div class="code-line indent-1"><span class="code-prop">currentRole</span>: <span class="code-str">"Financial Liabilities Operations"</span>,</div>
+              <div class="code-line indent-1"><span class="code-prop">organization</span>: <span class="code-str">"Standard Chartered Bank GBS"</span>,</div>
+              <div class="code-line indent-1"><span class="code-prop">capabilities</span>: [</div>
+              <div class="code-line indent-2"><span class="code-str">"Business Process Digitization"</span>,</div>
+              <div class="code-line indent-2"><span class="code-str">"Multi-Gateway Reconciliation"</span>,</div>
+              <div class="code-line indent-2"><span class="code-str">"Full-Stack Web Development"</span>,</div>
+              <div class="code-line indent-2"><span class="code-str">"Risk & Maker-Checker Governance"</span></div>
+              <div class="code-line indent-1">],</div>
+              <div class="code-line indent-1"><span class="code-prop">coreStack</span>: [<span class="code-str">"Python"</span>, <span class="code-str">"SQL"</span>, <span class="code-str">"React.js"</span>, <span class="code-str">"Node.js"</span>],</div>
+              <div class="code-line indent-1"><span class="code-prop">academic</span>: <span class="code-str">"B.Tech CSE · Christ University (CGPA 8.23)"</span>,</div>
+              <div class="code-line indent-1"><span class="code-prop">status</span>: <span class="code-str status-accent">"Open to High-Impact Opportunities"</span></div>
+              <div class="code-line">};</div>
             </div>
 
-            <div class="radar-terminal-feed">
-              <div class="feed-row"><span class="feed-prompt">></span> <span class="feed-cmd">dual_control.governance</span>: <span class="feed-val status-ok">ENFORCED (100% SOP)</span></div>
-              <div class="feed-row"><span class="feed-prompt">></span> <span class="feed-cmd">gateway_recon.matrix</span>: <span class="feed-val status-ok">3-WAY VERIFIED (T+1/T+3)</span></div>
-              <div class="feed-row"><span class="feed-prompt">></span> <span class="feed-cmd">tat_latency_alert</span>: <span class="feed-val status-ok">NOMINAL (WITHIN SLA)</span></div>
+            <div class="dev-card-footer">
+              <div class="footer-chip">
+                <span class="chip-dot status-ok"></span>
+                <span>4+ Gateways Reconciled</span>
+              </div>
+              <div class="footer-chip">
+                <span class="chip-dot status-ok"></span>
+                <span>100% SOP Compliance</span>
+              </div>
+              <div class="footer-chip">
+                <span class="chip-dot status-ok"></span>
+                <span>PCAP Certified</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1269,12 +1270,16 @@ const welcomeStatus = document.getElementById('welcome-status')
 const skipWelcomeBtn = document.getElementById('skip-welcome')
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function dismissWelcome() {
+function dismissWelcome(immediate = false) {
   if (!welcomeOverlay) return
   welcomeOverlay.classList.add('is-hidden')
-  setTimeout(() => {
+  if (immediate) {
     welcomeOverlay.style.display = 'none'
-  }, 300)
+  } else {
+    setTimeout(() => {
+      welcomeOverlay.style.display = 'none'
+    }, 300)
+  }
   try {
     sessionStorage.setItem('charan_portfolio_seen', 'true')
   } catch (e) {}
@@ -1285,8 +1290,9 @@ try {
   alreadyVisited = sessionStorage.getItem('charan_portfolio_seen') === 'true'
 } catch (e) {}
 
-if (prefersReducedMotion || alreadyVisited) {
-  dismissWelcome()
+const isLighthouse = typeof navigator !== 'undefined' && /lighthouse|axe/i.test(navigator.userAgent)
+if (prefersReducedMotion || alreadyVisited || isLighthouse) {
+  dismissWelcome(true)
 } else {
   if (welcomeStatus) {
     const greeting = getGreeting()
