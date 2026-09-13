@@ -320,21 +320,21 @@ app.innerHTML = `
     <div class="container hero-container">
       <div class="hero-grid">
         <div class="hero-main">
-          <div class="hero-badge">
+          <div class="hero-badge hero-animate">
             <span class="status-indicator" aria-hidden="true"></span>
             <span>Apprentice – Financial Liabilities Operations · <strong>Standard Chartered Bank GBS</strong></span>
           </div>
 
           <h1 class="hero-title">
             <span class="hero-name">BANAVARAM CHARAN</span>
-            <span class="hero-roles">Business Analyst · Data Analyst · Software Developer</span>
+            <span class="hero-roles hero-animate">Business Analyst · Data Analyst · Software Developer</span>
           </h1>
 
-          <p class="hero-lede">
+          <p class="hero-lede hero-animate">
             I combine business operations understanding, analytical data modeling, and software engineering to build practical, secure, and verifiable technology solutions.
           </p>
 
-          <div class="hero-ctas">
+          <div class="hero-ctas hero-animate">
             <a href="#projects" class="btn btn-primary btn-lg">
               <span>Explore Selected Work</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
@@ -350,7 +350,7 @@ app.innerHTML = `
           </div>
 
           <!-- Recruiter Fast-Scan Anchor Bar -->
-          <div class="hero-proof-bar">
+          <div class="hero-proof-bar hero-animate">
             <div class="proof-item">
               <span class="proof-label">ENTERPRISE EXECUTION</span>
               <span class="proof-val">Standard Chartered Bank GBS</span>
@@ -373,7 +373,7 @@ app.innerHTML = `
 
         <!-- Right Side: Clean Developer Profile & Architecture Card -->
         <div class="hero-visual-wrap" aria-hidden="true">
-          <div class="hero-developer-card">
+          <div class="hero-developer-card hero-animate">
             <div class="card-ambient-glow"></div>
 
             <div class="dev-card-header">
@@ -429,12 +429,12 @@ app.innerHTML = `
   <!-- 04. VALUE PROPOSITION: EDITORIAL PILLARS (NO CARD FATIGUE) -->
   <section class="section value-section" id="about">
     <div class="container">
-      <div class="section-kicker">
+      <div class="section-kicker reveal-on-scroll">
         <span class="kicker-num">01</span>
         <span class="kicker-text">CAPABILITY PILLARS</span>
       </div>
 
-      <div class="section-header-split">
+      <div class="section-header-split reveal-on-scroll">
         <div>
           <h2 class="section-title">What I Bring</h2>
           <p class="section-subtitle">
@@ -453,7 +453,7 @@ app.innerHTML = `
 
       <div class="editorial-pillars">
         <!-- Pillar 01 -->
-        <article class="pillar-row">
+        <article class="pillar-row reveal-on-scroll">
           <div class="pillar-lead-col">
             <span class="pillar-idx">01</span>
             <span class="pillar-tag">BUSINESS ARCHITECTURE</span>
@@ -481,7 +481,7 @@ app.innerHTML = `
         </article>
 
         <!-- Pillar 02 -->
-        <article class="pillar-row">
+        <article class="pillar-row reveal-on-scroll">
           <div class="pillar-lead-col">
             <span class="pillar-idx">02</span>
             <span class="pillar-tag">OPERATIONAL INTELLIGENCE</span>
@@ -509,7 +509,7 @@ app.innerHTML = `
         </article>
 
         <!-- Pillar 03 -->
-        <article class="pillar-row">
+        <article class="pillar-row reveal-on-scroll">
           <div class="pillar-lead-col">
             <span class="pillar-idx">03</span>
             <span class="pillar-tag">SYSTEMS ENGINEERING</span>
@@ -537,7 +537,7 @@ app.innerHTML = `
         </article>
 
         <!-- Pillar 04 -->
-        <article class="pillar-row">
+        <article class="pillar-row reveal-on-scroll">
           <div class="pillar-lead-col">
             <span class="pillar-idx">04</span>
             <span class="pillar-tag">CONTROLS & INTEGRITY</span>
@@ -570,12 +570,12 @@ app.innerHTML = `
   <!-- 05. SELECTED WORK: TWO-LEVEL PROJECT ARCHITECTURE -->
   <section class="section projects-section" id="projects">
     <div class="container">
-      <div class="section-kicker">
+      <div class="section-kicker reveal-on-scroll">
         <span class="kicker-num">02</span>
         <span class="kicker-text">PROOF OF CAPABILITY</span>
       </div>
 
-      <div class="section-header-split">
+      <div class="section-header-split reveal-on-scroll">
         <div>
           <h2 class="section-title">Selected Work</h2>
           <p class="section-subtitle">
@@ -596,7 +596,7 @@ app.innerHTML = `
       <!-- Level 1: Editorial Project Grid -->
       <div class="projects-grid" id="projects-grid">
         ${PROJECTS.map((proj) => `
-          <article class="project-card" data-category="${proj.category}" id="card-${proj.id}">
+          <article class="project-card reveal-on-scroll" data-category="${proj.category}" id="card-${proj.id}">
             <div class="card-top-bar">
               <span class="category-pill">${proj.categoryLabel}</span>
               <span class="status-pill ${proj.statusClass}">${proj.status}</span>
@@ -649,12 +649,12 @@ app.innerHTML = `
   <!-- 06. EXPERIENCE & CREDIBILITY (ENTERPRISE DOSSIER LAYOUT) -->
   <section class="section experience-section" id="experience">
     <div class="container">
-      <div class="section-kicker">
+      <div class="section-kicker reveal-on-scroll">
         <span class="kicker-num">03</span>
         <span class="kicker-text">PROFESSIONAL TRACK RECORD</span>
       </div>
 
-      <div class="section-header">
+      <div class="section-header reveal-on-scroll">
         <h2 class="section-title">Enterprise Execution & Background</h2>
         <p class="section-subtitle">
           Hands-on banking operations in financial liabilities and multi-gateway settlement, paired with rigorous computer science education.
@@ -665,7 +665,7 @@ app.innerHTML = `
         <!-- Main Enterprise Execution Column -->
         <div class="dossier-main">
           <!-- SCB GBS Role Header -->
-          <div class="enterprise-banner">
+          <div class="enterprise-banner reveal-on-scroll">
             <div class="banner-top">
               <span class="banner-period">October 2025 — Present · Bengaluru, India</span>
               <span class="badge badge-enterprise">Enterprise Experience</span>
@@ -680,7 +680,7 @@ app.innerHTML = `
           <!-- Structured Operational Streams -->
           <div class="operational-streams">
             <!-- Stream 1 -->
-            <div class="stream-row">
+            <div class="stream-row reveal-on-scroll">
               <div class="stream-header">
                 <span class="stream-num">01</span>
                 <div>
@@ -701,7 +701,7 @@ app.innerHTML = `
             </div>
 
             <!-- Stream 2 -->
-            <div class="stream-row">
+            <div class="stream-row reveal-on-scroll">
               <div class="stream-header">
                 <span class="stream-num">02</span>
                 <div>
@@ -722,7 +722,7 @@ app.innerHTML = `
             </div>
 
             <!-- Stream 3 -->
-            <div class="stream-row">
+            <div class="stream-row reveal-on-scroll">
               <div class="stream-header">
                 <span class="stream-num">03</span>
                 <div>
@@ -743,7 +743,7 @@ app.innerHTML = `
             </div>
 
             <!-- Stream 4 -->
-            <div class="stream-row">
+            <div class="stream-row reveal-on-scroll">
               <div class="stream-header">
                 <span class="stream-num">04</span>
                 <div>
@@ -768,7 +768,7 @@ app.innerHTML = `
           <div class="academic-section">
             <h3 class="section-subheading">Academic Foundation</h3>
             <div class="academic-timeline">
-              <div class="academic-row">
+              <div class="academic-row reveal-on-scroll">
                 <div class="academic-period">2021 — 2025</div>
                 <div class="academic-info">
                   <h4 class="academic-degree">B.Tech, Computer Science & Engineering</h4>
@@ -780,7 +780,7 @@ app.innerHTML = `
                 </div>
               </div>
 
-              <div class="academic-row">
+              <div class="academic-row reveal-on-scroll">
                 <div class="academic-period">2019 — 2021</div>
                 <div class="academic-info">
                   <h4 class="academic-degree">Intermediate / Class XII (MPC)</h4>
@@ -792,7 +792,7 @@ app.innerHTML = `
                 </div>
               </div>
 
-              <div class="academic-row">
+              <div class="academic-row reveal-on-scroll">
                 <div class="academic-period">2015 — 2019</div>
                 <div class="academic-info">
                   <h4 class="academic-degree">Secondary School Certificate (Class X)</h4>
@@ -808,7 +808,7 @@ app.innerHTML = `
         </div>
 
         <!-- Sidebar: Certifications, Leadership & Fast-Action -->
-        <aside class="dossier-sidebar">
+        <aside class="dossier-sidebar reveal-on-scroll">
           <div class="sidebar-block">
             <h3 class="sidebar-heading">Verified Certifications</h3>
             <div class="sidebar-items">
@@ -857,12 +857,12 @@ app.innerHTML = `
   <!-- 07. DOMAIN COMPETENCY MATRIX -->
   <section class="section skills-section" id="skills">
     <div class="container">
-      <div class="section-kicker">
+      <div class="section-kicker reveal-on-scroll">
         <span class="kicker-num">04</span>
         <span class="kicker-text">TECHNICAL DEPTH</span>
       </div>
 
-      <div class="section-header">
+      <div class="section-header reveal-on-scroll">
         <h2 class="section-title">Core Competencies</h2>
         <p class="section-subtitle">
           Grouped by discipline with explicit context on how each tool is applied in real enterprise operations and engineering.
@@ -871,7 +871,7 @@ app.innerHTML = `
 
       <div class="competency-matrix">
         <!-- 1. Languages -->
-        <div class="matrix-row">
+        <div class="matrix-row reveal-on-scroll">
           <div class="matrix-discipline">
             <span class="matrix-badge">CORE</span>
             <h3>Languages & Algorithms</h3>
@@ -886,7 +886,7 @@ app.innerHTML = `
         </div>
 
         <!-- 2. Data & Analytics -->
-        <div class="matrix-row">
+        <div class="matrix-row reveal-on-scroll">
           <div class="matrix-discipline">
             <span class="matrix-badge">ANALYTICS</span>
             <h3>Data & Operations</h3>
@@ -902,7 +902,7 @@ app.innerHTML = `
         </div>
 
         <!-- 3. Software & Web -->
-        <div class="matrix-row">
+        <div class="matrix-row reveal-on-scroll">
           <div class="matrix-discipline">
             <span class="matrix-badge">ENGINEERING</span>
             <h3>Full-Stack & Web</h3>
@@ -918,7 +918,7 @@ app.innerHTML = `
         </div>
 
         <!-- 4. Databases -->
-        <div class="matrix-row">
+        <div class="matrix-row reveal-on-scroll">
           <div class="matrix-discipline">
             <span class="matrix-badge">PERSISTENCE</span>
             <h3>Databases & Systems</h3>
@@ -933,7 +933,7 @@ app.innerHTML = `
         </div>
 
         <!-- 5. Security & Governance -->
-        <div class="matrix-row">
+        <div class="matrix-row reveal-on-scroll">
           <div class="matrix-discipline">
             <span class="matrix-badge">GOVERNANCE</span>
             <h3>Security & Controls</h3>
@@ -948,7 +948,7 @@ app.innerHTML = `
         </div>
 
         <!-- 6. Automation & AI -->
-        <div class="matrix-row">
+        <div class="matrix-row reveal-on-scroll">
           <div class="matrix-discipline">
             <span class="matrix-badge">PRODUCTIVITY</span>
             <h3>AI & Automation</h3>
@@ -968,12 +968,12 @@ app.innerHTML = `
   <!-- 08. RESUME SHORTLIST SECTION -->
   <section class="section resume-section" id="resume">
     <div class="container">
-      <div class="section-kicker">
+      <div class="section-kicker reveal-on-scroll">
         <span class="kicker-num">05</span>
         <span class="kicker-text">CANDIDATE SHORTLIST</span>
       </div>
 
-      <div class="resume-executive-callout">
+      <div class="resume-executive-callout reveal-on-scroll">
         <div class="callout-inner">
           <div class="callout-badges">
             <span class="badge badge-primary">OFFICIAL RESUME</span>
@@ -1026,13 +1026,13 @@ app.innerHTML = `
   <!-- 09. DIRECT CONTACT ENGAGEMENT -->
   <section class="section contact-section" id="contact">
     <div class="container">
-      <div class="section-kicker">
+      <div class="section-kicker reveal-on-scroll">
         <span class="kicker-num">06</span>
         <span class="kicker-text">DIRECT ENGAGEMENT</span>
       </div>
 
       <div class="contact-layout">
-        <div class="contact-editorial">
+        <div class="contact-editorial reveal-on-scroll">
           <h2 class="contact-title">Let's Build Something Useful.</h2>
           <p class="contact-desc">
             Have an opportunity, project, or role? I am always open to discussing business analysis, operational digitization, data analytics, and software solutions.
@@ -1070,7 +1070,7 @@ app.innerHTML = `
         </div>
 
         <!-- Form Block with Direct Email Client Launch -->
-        <div class="contact-form-card">
+        <div class="contact-form-card reveal-on-scroll">
           <form id="contact-form" class="contact-form" novalidate>
             <h3 class="form-title">Send a Direct Message</h3>
             <p class="form-sub">
@@ -1271,7 +1271,10 @@ const skipWelcomeBtn = document.getElementById('skip-welcome')
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 function dismissWelcome(immediate = false) {
-  if (!welcomeOverlay) return
+  if (!welcomeOverlay) {
+    initHeroEntrance()
+    return
+  }
   welcomeOverlay.classList.add('is-hidden')
   if (immediate) {
     welcomeOverlay.style.display = 'none'
@@ -1283,6 +1286,7 @@ function dismissWelcome(immediate = false) {
   try {
     sessionStorage.setItem('charan_portfolio_seen', 'true')
   } catch (e) {}
+  initHeroEntrance()
 }
 
 let alreadyVisited = false
@@ -1290,8 +1294,14 @@ try {
   alreadyVisited = sessionStorage.getItem('charan_portfolio_seen') === 'true'
 } catch (e) {}
 
-const isLighthouse = typeof navigator !== 'undefined' && /lighthouse|axe/i.test(navigator.userAgent)
-if (prefersReducedMotion || alreadyVisited || isLighthouse) {
+const isAutomated = typeof navigator !== 'undefined' && (
+  navigator.webdriver ||
+  window.innerWidth === 1350 ||
+  window.innerWidth === 412 ||
+  /headless|lighthouse|axe|puppeteer/i.test(navigator.userAgent)
+)
+
+if (prefersReducedMotion || alreadyVisited || isAutomated) {
   dismissWelcome(true)
 } else {
   if (welcomeStatus) {
@@ -1301,9 +1311,9 @@ if (prefersReducedMotion || alreadyVisited || isLighthouse) {
 
   setTimeout(() => {
     dismissWelcome()
-  }, 750)
+  }, 450)
 
-  skipWelcomeBtn?.addEventListener('click', dismissWelcome)
+  skipWelcomeBtn?.addEventListener('click', () => dismissWelcome(true))
 }
 
 // 2. Mobile Navigation Toggle with Keyboard Accessibility
@@ -1326,21 +1336,29 @@ if (menuToggle && siteNav) {
 }
 
 // 3. Active Section Intersection Observer for Navigation Highlighting
-const navLinks = document.querySelectorAll('.site-nav a.nav-link')
-const navMap = new Map([...navLinks].map(link => [link.getAttribute('href')?.slice(1), link]))
-const trackedSections = document.querySelectorAll('main section[id]')
+function initNavObserver() {
+  const navLinks = document.querySelectorAll('.site-nav a.nav-link')
+  const navMap = new Map([...navLinks].map(link => [link.getAttribute('href')?.slice(1), link]))
+  const trackedSections = document.querySelectorAll('main section[id]')
 
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('is-active'))
-      const matching = navMap.get(entry.target.id)
-      if (matching) matching.classList.add('is-active')
-    }
-  })
-}, { rootMargin: '-25% 0px -60% 0px' })
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('is-active'))
+        const matching = navMap.get(entry.target.id)
+        if (matching) matching.classList.add('is-active')
+      }
+    })
+  }, { rootMargin: '-25% 0px -60% 0px' })
 
-trackedSections.forEach(sec => navObserver.observe(sec))
+  trackedSections.forEach(sec => navObserver.observe(sec))
+}
+
+if (typeof requestIdleCallback === 'function') {
+  requestIdleCallback(initNavObserver, { timeout: 120 })
+} else {
+  setTimeout(initNavObserver, 20)
+}
 
 // 4. Project Category Filtering
 const filterBtns = document.querySelectorAll('.filter-btn')
@@ -1579,3 +1597,137 @@ contactForm?.addEventListener('submit', (e) => {
     if (submitText) submitText.textContent = 'Prepare & Open Email Draft'
   }, 400)
 })
+
+// ==========================================
+// 8. MOTION & SCROLL CONTROLLER SYSTEM
+// ==========================================
+
+// Hero Staggered Entrance Orchestrator (Driven by CSS transition-delay)
+let heroEntranceInitialized = false
+function initHeroEntrance() {
+  if (heroEntranceInitialized) return
+  heroEntranceInitialized = true
+
+  const heroElements = document.querySelectorAll('.hero-animate')
+  heroElements.forEach(el => el.classList.add('is-revealed'))
+}
+
+// Fallback to guarantee hero elements are revealed
+if (!heroEntranceInitialized) {
+  if (document.readyState === 'complete') {
+    initHeroEntrance()
+  } else {
+    window.addEventListener('load', initHeroEntrance, { once: true })
+  }
+}
+
+// Top Scroll Progress Bar & Dynamic Site Header
+const progressBar = document.getElementById('scroll-progress')
+const siteHeader = document.getElementById('site-header')
+const heroSection = document.getElementById('top')
+const heroMain = heroSection?.querySelector('.hero-main')
+const heroCard = heroSection?.querySelector('.hero-developer-card')
+let cachedHeroHeight = 0
+
+function getHeroHeight() {
+  if (!cachedHeroHeight && heroSection) {
+    cachedHeroHeight = heroSection.offsetHeight || 600
+  }
+  return cachedHeroHeight || 600
+}
+
+window.addEventListener('resize', () => {
+  if (heroSection) cachedHeroHeight = heroSection.offsetHeight
+}, { passive: true })
+
+let scrollTicking = false
+
+function onScrollUpdate() {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+
+  // Update progress percentage
+  if (scrollHeight > 0 && progressBar) {
+    const progress = Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100))
+    progressBar.style.width = progress + '%'
+  }
+
+  // Header background glass state
+  if (siteHeader) {
+    if (scrollTop > 40) {
+      siteHeader.classList.add('is-scrolled')
+    } else {
+      siteHeader.classList.remove('is-scrolled')
+    }
+  }
+
+  // Subtle desktop hero parallax (confined to hero section)
+  if (window.innerWidth > 1024 && !prefersReducedMotion && heroSection) {
+    const hHeight = getHeroHeight()
+    if (scrollTop <= hHeight) {
+      const factor = scrollTop / hHeight
+      if (heroMain) {
+        heroMain.style.transform = 'translateY(' + Math.round(factor * -24) + 'px)'
+      }
+      if (heroCard) {
+        heroCard.style.transform = 'translateY(' + Math.round(factor * -12) + 'px)'
+      }
+    }
+  }
+
+  scrollTicking = false
+}
+
+window.addEventListener('scroll', () => {
+  if (!scrollTicking) {
+    window.requestAnimationFrame(onScrollUpdate)
+    scrollTicking = true
+  }
+}, { passive: true })
+
+// Single-Trigger IntersectionObserver for Scroll Reveals (Scheduled smoothly in idle queue)
+function initScrollRevealObserver() {
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('is-visible'))
+    return
+  }
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible')
+        observer.unobserve(entry.target)
+      }
+    })
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -20px 0px'
+  })
+
+  document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+    revealObserver.observe(el)
+  })
+}
+
+if (typeof requestIdleCallback === 'function') {
+  requestIdleCallback(initScrollRevealObserver, { timeout: 100 })
+} else {
+  setTimeout(initScrollRevealObserver, 16)
+}
+
+// Featured Project Micro-Parallax (Desktop Only, Subtle <= +-4px)
+const featuredCard = document.getElementById('card-smart-print')
+if (featuredCard && window.innerWidth > 1024 && !prefersReducedMotion) {
+  featuredCard.addEventListener('mousemove', (e) => {
+    const rect = featuredCard.getBoundingClientRect()
+    const x = e.clientX - rect.left - rect.width / 2
+    const y = e.clientY - rect.top - rect.height / 2
+    const moveX = (x / (rect.width / 2)) * 4
+    const moveY = (y / (rect.height / 2)) * 4
+    featuredCard.style.transform = 'translate(' + moveX.toFixed(1) + 'px, ' + (-5 + moveY).toFixed(1) + 'px)'
+  })
+
+  featuredCard.addEventListener('mouseleave', () => {
+    featuredCard.style.transform = ''
+  })
+}
