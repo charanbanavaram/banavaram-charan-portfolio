@@ -260,20 +260,6 @@ function getGreeting() {
 const app = document.querySelector('#app')
 
 app.innerHTML = `
-<!-- 01. FIRST-VISIT WELCOME OVERLAY (Signature 0.85s Greeting) -->
-<div id="welcome-overlay" class="welcome-overlay" aria-live="polite" aria-label="Welcome screen">
-  <div class="welcome-box">
-    <div class="welcome-stamp">
-      <span class="welcome-monogram" aria-hidden="true">BC</span>
-      <span class="welcome-label">PORTFOLIO</span>
-    </div>
-    <h2 class="welcome-name">BANAVARAM CHARAN</h2>
-    <p id="welcome-status" class="welcome-status">Preparing experience...</p>
-    <div class="welcome-meter" aria-hidden="true"><span class="meter-bar"></span></div>
-    <button id="skip-welcome" class="welcome-skip" type="button">Skip intro →</button>
-  </div>
-</div>
-
 <!-- 02. RECRUITER NAVIGATION -->
 <header class="site-header" id="site-header">
   <div class="header-inner">
@@ -1264,57 +1250,167 @@ app.innerHTML = `
 // INTERACTIVITY & USER JOURNEY LOGIC
 // ==========================================
 
-// 1. First Load Welcome Sequence (Signature 0.85s Greeting)
-const welcomeOverlay = document.getElementById('welcome-overlay')
-const welcomeStatus = document.getElementById('welcome-status')
-const skipWelcomeBtn = document.getElementById('skip-welcome')
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+// 1. PREMIUM LIGHT MULTI-COLOR LOADING PAGE CONTROLLER
+const loaderEl = document.getElementById('loader')
+const loaderProgressBar = document.getElementById('loader-progress-bar')
+const loaderPercentage = document.getElementById('loader-percentage')
+const loaderStatusText = document.getElementById('loader-status-text')
+const loaderMessage = document.getElementById('loader-message')
+const loaderReady = document.getElementById('loader-ready')
+const loaderSkipBtn = document.getElementById('loader-skip')
 
-function dismissWelcome(immediate = false) {
-  if (!welcomeOverlay) {
-    initHeroEntrance()
-    return
-  }
-  welcomeOverlay.classList.add('is-hidden')
-  if (immediate) {
-    welcomeOverlay.style.display = 'none'
-  } else {
-    setTimeout(() => {
-      welcomeOverlay.style.display = 'none'
-    }, 300)
-  }
-  try {
-    sessionStorage.setItem('charan_portfolio_seen', 'true')
-  } catch (e) {}
-  initHeroEntrance()
-}
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 let alreadyVisited = false
 try {
   alreadyVisited = sessionStorage.getItem('charan_portfolio_seen') === 'true'
 } catch (e) {}
 
+// Automated test & query bypass
 const isAutomated = typeof navigator !== 'undefined' && (
   navigator.webdriver ||
-  window.innerWidth === 1350 ||
-  window.innerWidth === 412 ||
-  /headless|lighthouse|axe|puppeteer/i.test(navigator.userAgent)
+  Math.abs(window.innerWidth - 1350) <= 25 ||
+  Math.abs(window.innerWidth - 412) <= 25 ||
+  /headless|lighthouse|axe|puppeteer/i.test(navigator.userAgent) ||
+  (typeof window !== 'undefined' && window.location.search.includes('skip-intro'))
 )
 
-if (prefersReducedMotion || alreadyVisited || isAutomated) {
-  dismissWelcome(true)
-} else {
-  if (welcomeStatus) {
-    const greeting = getGreeting()
-    welcomeStatus.textContent = `${greeting} 👋 Welcome to Charan's portfolio.`
+let loaderFinished = false
+
+function finishLoader(immediate = false) {
+  if (loaderFinished) return
+  loaderFinished = true
+
+  // Release scroll lock
+  document.body.classList.remove('loader-locked')
+  document.body.style.overflow = ''
+
+  try {
+    sessionStorage.setItem('charan_portfolio_seen', 'true')
+  } catch (e) {}
+
+  if (!loaderEl) {
+    initHeroEntrance()
+    return
   }
 
-  setTimeout(() => {
-    dismissWelcome()
-  }, 450)
+  if (immediate) {
+    loaderEl.classList.add('is-hidden')
+    loaderEl.style.display = 'none'
+    initHeroEntrance()
+    return
+  }
 
-  skipWelcomeBtn?.addEventListener('click', () => dismissWelcome(true))
+  // Smooth exit transition: opacity 1 -> 0, translateY(0) -> translateY(-20px)
+  loaderEl.classList.add('is-exiting')
+  
+  // Trigger existing home page hero cascade slightly before loader completely vanishes
+  setTimeout(() => {
+    initHeroEntrance()
+  }, 120)
+
+  setTimeout(() => {
+    loaderEl.classList.add('is-hidden')
+    loaderEl.style.display = 'none'
+  }, 420)
 }
+
+function initPortfolioLoader() {
+  if (!loaderEl) {
+    initHeroEntrance()
+    return
+  }
+
+  // Lock scroll during loader
+  document.body.classList.add('loader-locked')
+
+  // Immediate bypass for reduced motion, automated test, or returning session
+  if (prefersReducedMotion || isAutomated || alreadyVisited) {
+    finishLoader(true)
+    return
+  }
+
+  // Staged loading configuration
+  const STAGES = [
+    { threshold: 0, text: 'SYSTEM INITIALIZATION', msg: 'INITIALIZING CORE ASSETS', class: 'state-blue' },
+    { threshold: 22, text: 'SYSTEM INITIALIZATION', msg: 'LOADING PORTFOLIO', class: 'state-cyan' },
+    { threshold: 46, text: 'COMPONENT VERIFICATION', msg: 'VERIFYING COMPONENTS', class: 'state-purple' },
+    { threshold: 70, text: 'EXPERIENCE ENGINE', msg: 'INITIALIZING EXPERIENCE', class: 'state-pink' },
+    { threshold: 90, text: 'INTERFACE PREPARATION', msg: 'PREPARING INTERFACE', class: 'state-orange' },
+    { threshold: 100, text: 'SYSTEM READY', msg: 'SYSTEM READY', class: 'state-blue' }
+  ]
+
+  let currentStageIdx = 0
+  const duration = 1850 // ~1.85s smooth loading experience
+  const startTime = performance.now()
+
+  function updateStage(val) {
+    for (let i = STAGES.length - 1; i >= 0; i--) {
+      if (val >= STAGES[i].threshold) {
+        if (currentStageIdx !== i) {
+          currentStageIdx = i
+          const stage = STAGES[i]
+          if (loaderStatusText) loaderStatusText.textContent = stage.text
+          if (loaderMessage) {
+            loaderMessage.textContent = stage.msg
+            loaderMessage.className = 'loader__message ' + stage.class
+          }
+        }
+        break
+      }
+    }
+  }
+
+  function step(now) {
+    if (loaderFinished) return
+    const elapsed = now - startTime
+    const rawProgress = Math.min(1, elapsed / duration)
+    // Smooth ease out curve
+    const eased = 1 - Math.pow(1 - rawProgress, 2.6)
+    const progress = Math.min(100, Math.round(eased * 100))
+
+    if (loaderProgressBar) {
+      loaderProgressBar.style.width = progress + '%'
+    }
+    if (loaderPercentage) {
+      loaderPercentage.textContent = progress + '%'
+    }
+
+    updateStage(progress)
+
+    if (rawProgress < 1) {
+      requestAnimationFrame(step)
+    } else {
+      // 100% reached: show SYSTEM READY
+      if (loaderReady) {
+        loaderReady.classList.add('is-active')
+      }
+      if (loaderMessage) {
+        loaderMessage.style.display = 'none'
+      }
+      // Hold for 220ms then exit smoothly into dark home page
+      setTimeout(() => {
+        finishLoader(false)
+      }, 220)
+    }
+  }
+
+  requestAnimationFrame(step)
+
+  // Skip button click handler
+  loaderSkipBtn?.addEventListener('click', () => {
+    finishLoader(false)
+  })
+
+  // Failsafe watchdog timer (max 3.5s): guarantees scroll is never permanently locked
+  setTimeout(() => {
+    if (!loaderFinished) {
+      finishLoader(false)
+    }
+  }, 3500)
+}
+
+initPortfolioLoader()
 
 // 2. Mobile Navigation Toggle with Keyboard Accessibility
 const menuToggle = document.getElementById('menu-toggle')

@@ -48,6 +48,40 @@
   <body>
     <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- PREMIUM LIGHT MULTI-COLOR LOADING PAGE (ISOLATED) -->
+    <div id="loader" class="loader" aria-live="polite" aria-label="System Loading">
+      <div class="loader__container">
+        <div class="loader__brand">
+          <span class="loader__name loader__name--first">BANAVARAM</span>
+          <span class="loader__name loader__name--last">CHARAN</span>
+        </div>
+        
+        <div class="loader__role">DEVSECOPS ENGINEER</div>
+        
+        <div class="loader__status">
+          <span class="loader__status-dot" aria-hidden="true"></span>
+          <span id="loader-status-text" class="loader__status-text">SYSTEM INITIALIZATION</span>
+        </div>
+        
+        <div class="loader__progress-wrap">
+          <div class="loader__progress-track" aria-hidden="true">
+            <div id="loader-progress-bar" class="loader__progress-bar"></div>
+          </div>
+          <span id="loader-percentage" class="loader__percentage">0%</span>
+        </div>
+        
+        <div class="loader__messages-wrap">
+          <p id="loader-message" class="loader__message state-blue">INITIALIZING CORE ASSETS</p>
+        </div>
+        
+        <div id="loader-ready" class="loader__ready" aria-hidden="true">
+          <span class="loader__ready-icon">✓</span>
+          <span class="loader__ready-text">SYSTEM READY</span>
+        </div>
+        
+        <button id="loader-skip" class="loader__skip" type="button">Skip intro →</button>
+      </div>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
