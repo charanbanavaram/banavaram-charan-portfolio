@@ -19,26 +19,11 @@ const PROJECTS = projectsContent.map(p => ({
   status: p.status,
   statusClass: p.featured ? 'status-dev' : 'status-done',
   summary: p.summary,
-  githubUrl: p.id === 'smart-print' ? 'https://github.com/charanbanavaram' : null,
-  architectureNodes: (p.caseStudy.workflow || []).map((w, idx) => ({
-    step: w.step || String(idx + 1).padStart(2, '0'),
-    tier: 'Workflow Step',
-    label: w.title,
-    desc: w.desc,
-    badge: 'Step ' + (idx + 1)
-  })),
-  steps: {
-    problem: p.caseStudy.problem,
-    context: p.caseStudy.context,
-    role: p.caseStudy.role,
-    analysis: p.oneLiner,
-    solution: p.summary,
-    architecture: (p.caseStudy.workflow || []).map(w => `[${w.step || ''}] ${w.title}: ${w.desc}`).join('\n\n'),
-    implementation: p.caseStudy.technologies || p.tech.join(', '),
-    security: p.caseStudy.role + ' with emphasis on Maker–Checker risk governance, data privacy, and operational auditability.',
-    challenges: 'Balancing operational turnaround time, data validation rigor, and clear user experience.',
-    outcome: p.caseStudy.outcome
-  }
+  githubUrl: p.caseStudy.githubUrl || null,
+  problem: p.caseStudy.problem,
+  approach: p.caseStudy.approach,
+  technologies: p.caseStudy.technologies || p.tech.join(', '),
+  result: p.caseStudy.result
 }))
 
 // ==========================================
@@ -331,18 +316,12 @@ function openCaseStudy(projectId, triggerEl) {
   const summaryEl = document.getElementById('modal-summary')
   if (summaryEl) summaryEl.textContent = proj.summary
 
-  // Populate 10 steps
+  // Populate authentic project sections
   const stepMap = {
-    'modal-step-problem': proj.steps.problem,
-    'modal-step-context': proj.steps.context,
-    'modal-step-role': proj.steps.role,
-    'modal-step-analysis': proj.steps.analysis,
-    'modal-step-solution': proj.steps.solution,
-    'modal-step-architecture': proj.steps.architecture,
-    'modal-step-implementation': proj.steps.implementation,
-    'modal-step-security': proj.steps.security,
-    'modal-step-challenges': proj.steps.challenges,
-    'modal-step-outcome': proj.steps.outcome
+    'modal-step-problem': proj.problem,
+    'modal-step-approach': proj.approach,
+    'modal-step-tech': proj.technologies,
+    'modal-step-result': proj.result
   }
 
   Object.entries(stepMap).forEach(([id, text]) => {
@@ -350,29 +329,12 @@ function openCaseStudy(projectId, triggerEl) {
     if (el) el.textContent = text || ''
   })
 
-  // Populate visual architecture nodes
-  const nodesContainer = document.getElementById('modal-arch-nodes')
-  if (nodesContainer && proj.architectureNodes) {
-    nodesContainer.innerHTML = proj.architectureNodes.map((node, i) => `
-      <div class="arch-node-item">
-        <div class="node-meta">
-          <span class="node-idx">${node.step}</span>
-          <span class="node-tier">${node.tier}</span>
-          <span class="node-tag">${node.badge}</span>
-        </div>
-        <strong class="node-heading">${node.label}</strong>
-        <p class="node-desc">${node.desc}</p>
-        ${i < proj.architectureNodes.length - 1 ? '<div class="node-arrow" aria-hidden="true">↓</div>' : ''}
-      </div>
-    `).join('')
-  }
-
   // Populate external links
   const linksContainer = document.getElementById('modal-external-links')
   if (linksContainer) {
     linksContainer.innerHTML = ''
     if (proj.githubUrl) {
-      linksContainer.innerHTML += `<a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">View on GitHub ↗</a>`
+      linksContainer.innerHTML += `<a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm"><span>View on GitHub</span> <span aria-hidden="true">↗</span></a>`
     }
   }
 

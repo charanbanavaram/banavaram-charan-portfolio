@@ -2,28 +2,38 @@
 > Business Analyst · Data Analyst · Software Developer
 
 ## Summary
-Banavaram Charan combines business operations, data analysis, and software engineering to build practical, secure, and scalable technology solutions. Experienced in banking operations, financial liabilities, payment reconciliation, Maker-Checker risk controls, and full-stack web application development.
+Banavaram Charan connects business operations, data analysis, and software engineering to build practical, secure, and structured technology solutions. Experienced in banking operations, financial liabilities servicing, payment gateway settlement, Maker–Checker risk controls, and practical software development.
 
 ## Current Experience
 - Apprentice – Financial Liabilities Operations (WRB), Standard Chartered Bank GBS, Bengaluru, India (October 2025 – Present)
-- Core Focus: High-volume financial transactions, 7-gateway payment settlement (Razorpay, Paytm, PayU, CCAvenue, TPSL, BillDesk, Atom), discrepancy investigation, Maker-Checker authorization, deposit servicing, Excel MIS reporting, and process digitization.
+- Core Focus: High-volume financial transaction servicing, payment gateway settlement and refund processing (Razorpay, Paytm, PayU, CCAvenue, TPSL, BillDesk, Atom), discrepancy investigation, Maker–Checker authorization, deposit and liability servicing, daily Excel MIS reporting, and process improvement.
 
 ## Education
-- B.Tech in Computer Science & Engineering, Christ (Deemed to be University), Bengaluru (2021 – 2025), CGPA: 8.23 / 10
-- Class XII, Sri Chaitanya Junior College (2019 – 2021), CGPA: 8.2 / 10
+- B.Tech in Computer Science & Engineering (IoT), Christ (Deemed to be University), Bengaluru (2021 – 2025), CGPA: 8.23 / 10
+- Class XII, Sri Chaitanya Junior College (2019 – 2021), 78.10% (CGPA: 8.2 / 10)
 - Class X, Sri Swamy Vivekananda EM High School (2015 – 2019), GPA: 9.3 / 10
 
 ## Verified Projects
-1. Smart Print: Secure print management platform with QR-code and secure PIN authentication, RBAC, REST APIs, and database architecture (React.js, Node.js, MySQL/PostgreSQL).
-2. Block Management Process Digitization: Business analysis and future-state workflow model for financial block actions with Maker-Checker controls, RBAC, and SLA monitoring.
-3. Payment Settlement & Reconciliation Process Analysis: Operational framework mapping payment flows across 7 gateways, discrepancy classification, and automated refund checkpoints.
-4. Banking Operations Performance Dashboard: Operational intelligence pipeline using SQL transformations and interactive Power BI KPI dashboards for volume and SLA tracking.
+1. Smart Print: Web-based secure print management platform with temporary document uploads, dynamic 6-digit PIN and QR verification, printer selection, and automated file deletion (React.js, Node.js, Express, REST APIs, MySQL/PostgreSQL).
+2. Cloud Secure Storage Mechanism (CSSM): Cloud storage security framework combining data dispersion and cryptographic encryption to distribute fragmented data securely across cloud endpoints (OpenStack Swift).
+3. iHealthcare: Automated medical image processing workflow with built-in patient data masking (PII sanitization) for secure clinical review (Python, Medical Image Processing).
+4. YouTube Adview Prediction: Machine learning regression project predicting YouTube video ad views based on engagement metrics, where Random Forest Regressor demonstrated top performance (Python, scikit-learn, Pandas).
+5. Predictive Maintenance Framework: IoT framework collecting sensor telemetry via MQTT to monitor equipment conditions and identify anomalies proactively (Arduino, ESP8266, MQTT, Advantech Cloud PaaS, Node-RED).
 
 ## Technical Skills
-- Programming: Python (PCAP Certified), Java, JavaScript, SQL, C (NPTEL)
-- Data & Analytics: SQL, Power BI, Microsoft Excel (Formulas, Pivot, MIS), Reconciliation
-- Full-Stack & APIs: React.js, Node.js, REST APIs, HTML5, CSS3, Git, GitHub
-- Business Controls & Governance: RBAC, Maker-Checker Controls, Audit Logging, SLA Monitoring
+- Business Analysis & Operations: Business Process Modeling, Requirements Gathering, Maker–Checker Controls, Banking Operations (WRB), SLA & Exception Management
+- Data & Analytics: SQL (Queries, Joins, Aggregations), Power BI Dashboards, Microsoft Excel (Advanced: VLOOKUP, Pivot Tables, MIS Reports), Python for Data Analysis
+- Software Development: Python (PCAP Certified), Java, JavaScript (ES6+), C (NPTEL), React.js, Node.js, Express, REST APIs, MySQL, PostgreSQL, MongoDB
+- Cloud & Platforms: Git, GitHub, VS Code, SDLC, RBAC, Docker Basics, AWS Cloud Concepts, ServiceNow (CSA & CAD)
+- IoT (Internet of Things): Advantech Cloud PaaS, MQTT Protocol, Arduino, ESP8266, Node-RED, Sensor Telemetry
+
+## Verified Credentials
+- PCAP – Certified Associate in Python Programming (Python Institute)
+- Problem Solving Through Programming in C (NPTEL — IIT Kharagpur)
+- Advantech PaaS — Level 1, Level 2 & Level 3 (Advantech Cloud IoT Academy)
+- ServiceNow Certified System Administrator (CSA)
+- ServiceNow Certified Application Developer (CAD)
+- National Cadet Corps (NCC) – Air Wing (2022 – 2025)
 
 ## Contact & Links
 - [Website](https://banavaramcharan.in/)
@@ -31,4 +41,3 @@ Banavaram Charan combines business operations, data analysis, and software engin
 - [LinkedIn Profile](https://www.linkedin.com/in/banavaram-charan-733ab4222/)
 - [GitHub Profile](https://github.com/charanbanavaram)
 - [Verified Resume PDF](https://banavaramcharan.in/Banavaram-Charan-Resume.pdf)
-
