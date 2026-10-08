@@ -1448,6 +1448,63 @@ body.loader-locked {
 .code-str { color: #A7F3D0; }
 .code-str.status-accent { color: #93C5FD; font-weight: 500; }
 
+/* Executive Profile Body (Authentic Profile Showcase) */
+.dev-profile-body {
+  position: relative;
+  z-index: 1;
+  padding: 22px 24px;
+  background: rgba(14, 19, 31, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.p-meta-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+
+.p-meta-val {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.p-meta-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.profile-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.p-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
 .dev-card-footer {
   position: relative;
   z-index: 1;
@@ -2535,6 +2592,108 @@ body.loader-locked {
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+/* Full Grid Credentials */
+.credentials-grid-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Education Section Layout */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.education-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.education-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.edu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.edu-year {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.edu-degree {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.edu-inst {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.edu-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Leadership Block (NCC) */
+.leadership-block {
+  background: rgba(14, 19, 31, 0.6);
+  border: 1px solid var(--border-card);
+  border-left: 3px solid var(--cyan);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+}
+
+.leadership-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.leadership-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.leadership-dates {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--cyan);
+}
+
+.leadership-desc {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* 12. RESUME SHORTLIST SECTION */

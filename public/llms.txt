@@ -23,13 +23,12 @@ Banavaram Charan combines business operations, data analysis, and software engin
 - Programming: Python (PCAP Certified), Java, JavaScript, SQL, C (NPTEL)
 - Data & Analytics: SQL, Power BI, Microsoft Excel (Formulas, Pivot, MIS), Reconciliation
 - Full-Stack & APIs: React.js, Node.js, REST APIs, HTML5, CSS3, Git, GitHub
-- Databases: MySQL, PostgreSQL, MongoDB
-- DevSecOps & Governance: RBAC, Maker-Checker, QR Authentication, Audit Logging, SLA Monitoring
+- Business Controls & Governance: RBAC, Maker-Checker Controls, Audit Logging, SLA Monitoring
 
 ## Contact & Links
-- [Website](https://banavaram-charan-portfoliocom.vercel.app/)
+- [Website](https://banavaramcharan.in/)
 - [Email](mailto:banavaramcharan@gmail.com)
 - [LinkedIn Profile](https://www.linkedin.com/in/banavaram-charan-733ab4222/)
 - [GitHub Profile](https://github.com/charanbanavaram)
-- [Verified Resume PDF](https://banavaram-charan-portfoliocom.vercel.app/Banavaram-Charan-Resume.pdf)
+- [Verified Resume PDF](https://banavaramcharan.in/Banavaram-Charan-Resume.pdf)
 
