@@ -48,38 +48,85 @@
   <body>
     <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- PREMIUM LIGHT MULTI-COLOR LOADING PAGE (ISOLATED) -->
-    <div id="loader" class="loader" aria-live="polite" aria-label="System Loading">
+    <!-- PREMIUM LIGHT PERSONAL BRAND INTRODUCTION (ISOLATED) -->
+    <div id="loader" class="loader" aria-live="polite" aria-label="Introduction to Banavaram Charan">
+      <div class="loader__ambient" aria-hidden="true"></div>
+
       <div class="loader__container">
-        <div class="loader__brand">
-          <span class="loader__name loader__name--first">BANAVARAM</span>
-          <span class="loader__name loader__name--last">CHARAN</span>
-        </div>
-        
-        <div class="loader__role">DEVSECOPS ENGINEER</div>
-        
-        <div class="loader__status">
-          <span class="loader__status-dot" aria-hidden="true"></span>
-          <span id="loader-status-text" class="loader__status-text">SYSTEM INITIALIZATION</span>
-        </div>
-        
-        <div class="loader__progress-wrap">
-          <div class="loader__progress-track" aria-hidden="true">
-            <div id="loader-progress-bar" class="loader__progress-bar"></div>
+        <button id="loader-skip" class="loader__skip" type="button" aria-label="Skip introduction">Skip intro →</button>
+
+        <!-- 1. USER PHOTO -->
+        <div class="loader__photo-wrap">
+          <div class="loader__photo-glow" aria-hidden="true"></div>
+          <div class="loader__photo-frame">
+            <img 
+              src="/charan-profile.jpg" 
+              alt="Banavaram Charan" 
+              class="loader__photo-img" 
+              width="150" 
+              height="150" 
+              loading="eager" 
+              fetchpriority="high"
+            />
           </div>
-          <span id="loader-percentage" class="loader__percentage">0%</span>
         </div>
-        
-        <div class="loader__messages-wrap">
-          <p id="loader-message" class="loader__message state-blue">INITIALIZING CORE ASSETS</p>
+
+        <!-- 2. NAME -->
+        <div class="loader__brand">
+          <h1 class="loader__name">
+            <span class="loader__name-part loader__name-first">BANAVARAM</span>
+            <span class="loader__name-part loader__name-last">CHARAN</span>
+          </h1>
         </div>
-        
-        <div id="loader-ready" class="loader__ready" aria-hidden="true">
-          <span class="loader__ready-icon">✓</span>
-          <span class="loader__ready-text">SYSTEM READY</span>
+
+        <!-- 3. ANIMATED GRADIENT LOADING LINE & PERCENTAGE -->
+        <div class="loader__progress-box">
+          <div class="loader__line-track" aria-hidden="true">
+            <div id="loader-progress-bar" class="loader__line-fill"></div>
+          </div>
+          <div class="loader__percentage-row">
+            <span id="loader-percentage" class="loader__percentage">0%</span>
+          </div>
         </div>
-        
-        <button id="loader-skip" class="loader__skip" type="button">Skip intro →</button>
+
+        <!-- 4. PROFESSIONAL IDENTITY (LEVEL 2) -->
+        <div class="loader__identity">
+          <span class="loader__role-primary">FULL STACK DEVELOPER</span>
+          <span class="loader__role-amp">&amp;</span>
+          <span class="loader__role-secondary">FINTECH ENTHUSIAST</span>
+        </div>
+
+        <!-- 5. METADATA (LEVEL 3) -->
+        <div class="loader__meta">
+          <span class="loader__meta-chunk">
+            <span class="loader__meta-item">EX-STANDARD CHARTERED GBS</span>
+          </span>
+          <span class="loader__meta-chunk">
+            <span class="loader__meta-dot" aria-hidden="true">·</span>
+            <span class="loader__meta-item">BANKING OPERATIONS</span>
+            <span class="loader__meta-dot" aria-hidden="true">·</span>
+            <span class="loader__meta-item">B.TECH CSE</span>
+          </span>
+        </div>
+
+        <!-- 6. TECHNOLOGY TAGS (LEVEL 4) -->
+        <div class="loader__tags" aria-label="Core Technologies">
+          <span class="loader__tag">Python</span>
+          <span class="loader__tag">Java</span>
+          <span class="loader__tag">JavaScript</span>
+          <span class="loader__tag">React</span>
+          <span class="loader__tag">SQL</span>
+        </div>
+
+        <!-- 7. LOADING STATUS (LEVEL 5) -->
+        <div class="loader__status-box">
+          <span class="loader__status-dot" aria-hidden="true"></span>
+          <span id="loader-status-text" class="loader__status-text">INITIALIZING PROFILE</span>
+          <div id="loader-ready" class="loader__ready" aria-hidden="true">
+            <span class="loader__ready-icon">✓</span>
+            <span class="loader__ready-text">READY</span>
+          </div>
+        </div>
       </div>
     </div>
     <div id="app">

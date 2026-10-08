@@ -273,13 +273,15 @@ const loaderSkipBtn = document.getElementById('loader-skip')
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+const forceLoader = typeof window !== 'undefined' && window.location.search.includes('force-loader')
+
 let alreadyVisited = false
 try {
-  alreadyVisited = sessionStorage.getItem('charan_portfolio_seen') === 'true'
+  alreadyVisited = !forceLoader && sessionStorage.getItem('charan_portfolio_seen') === 'true'
 } catch (e) {}
 
 // Automated test & query bypass
-const isAutomated = typeof navigator !== 'undefined' && (
+const isAutomated = !forceLoader && typeof navigator !== 'undefined' && (
   navigator.webdriver ||
   Math.abs(window.innerWidth - 1350) <= 25 ||
   Math.abs(window.innerWidth - 412) <= 25 ||
@@ -346,18 +348,17 @@ function initPortfolioLoader() {
     return
   }
 
-  // Staged loading configuration
+  // Staged loading configuration matching Master Prompt (3-5 meaningful states)
   const STAGES = [
-    { threshold: 0, text: 'SYSTEM INITIALIZATION', msg: 'INITIALIZING CORE ASSETS', class: 'state-blue' },
-    { threshold: 22, text: 'SYSTEM INITIALIZATION', msg: 'LOADING PORTFOLIO', class: 'state-cyan' },
-    { threshold: 46, text: 'COMPONENT VERIFICATION', msg: 'VERIFYING COMPONENTS', class: 'state-purple' },
-    { threshold: 70, text: 'EXPERIENCE ENGINE', msg: 'INITIALIZING EXPERIENCE', class: 'state-pink' },
-    { threshold: 90, text: 'INTERFACE PREPARATION', msg: 'PREPARING INTERFACE', class: 'state-orange' },
-    { threshold: 100, text: 'SYSTEM READY', msg: 'SYSTEM READY', class: 'state-blue' }
+    { threshold: 0, text: 'INITIALIZING PROFILE' },
+    { threshold: 25, text: 'LOADING EXPERIENCE' },
+    { threshold: 55, text: 'LOADING PROJECTS' },
+    { threshold: 82, text: 'PREPARING PORTFOLIO' },
+    { threshold: 100, text: 'READY' }
   ]
 
-  let currentStageIdx = 0
-  const duration = 1850 // ~1.85s smooth loading experience
+  let currentStageIdx = -1
+  const duration = 1800 // ~1.8s smooth loading experience
   const startTime = performance.now()
 
   function updateStage(val) {
@@ -366,10 +367,14 @@ function initPortfolioLoader() {
         if (currentStageIdx !== i) {
           currentStageIdx = i
           const stage = STAGES[i]
-          if (loaderStatusText) loaderStatusText.textContent = stage.text
-          if (loaderMessage) {
-            loaderMessage.textContent = stage.msg
-            loaderMessage.className = 'loader__message ' + stage.class
+          if (loaderStatusText && val < 100) {
+            loaderStatusText.style.opacity = '0'
+            setTimeout(() => {
+              if (loaderStatusText) {
+                loaderStatusText.textContent = stage.text
+                loaderStatusText.style.opacity = '1'
+              }
+            }, 120)
           }
         }
         break
@@ -381,8 +386,8 @@ function initPortfolioLoader() {
     if (loaderFinished) return
     const elapsed = now - startTime
     const rawProgress = Math.min(1, elapsed / duration)
-    // Smooth ease out curve
-    const eased = 1 - Math.pow(1 - rawProgress, 2.6)
+    // Decelerating ease out curve
+    const eased = 1 - Math.pow(1 - rawProgress, 2.5)
     const progress = Math.min(100, Math.round(eased * 100))
 
     if (loaderProgressBar) {
@@ -397,14 +402,14 @@ function initPortfolioLoader() {
     if (rawProgress < 1) {
       requestAnimationFrame(step)
     } else {
-      // 100% reached: show SYSTEM READY
+      // 100% reached: reveal READY briefly
+      if (loaderStatusText) {
+        loaderStatusText.style.display = 'none'
+      }
       if (loaderReady) {
         loaderReady.classList.add('is-active')
       }
-      if (loaderMessage) {
-        loaderMessage.style.display = 'none'
-      }
-      // Hold for 220ms then exit smoothly into dark home page
+      // Hold for 220ms then seamlessly dissolve into dark home page
       setTimeout(() => {
         finishLoader(false)
       }, 220)
@@ -418,12 +423,21 @@ function initPortfolioLoader() {
     finishLoader(false)
   })
 
-  // Failsafe watchdog timer (max 3.5s): guarantees scroll is never permanently locked
+  // Keyboard Esc key bypass
+  const onKeyDown = (e) => {
+    if (e.key === 'Escape' && !loaderFinished) {
+      finishLoader(false)
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }
+  window.addEventListener('keydown', onKeyDown)
+
+  // Failsafe watchdog timer (max 2.8s): guarantees scroll is never permanently locked
   setTimeout(() => {
     if (!loaderFinished) {
       finishLoader(false)
     }
-  }, 3500)
+  }, 2800)
 }
 
 initPortfolioLoader()
